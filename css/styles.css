@@ -21,6 +21,11 @@ body {
   background-color: var(--color-white);
   color: var(--color-slate);
 }
+@media (min-width: 500px) {
+  body {
+    background-color: orange;
+  }
+}
 
 h1,
 h2,
@@ -60,13 +65,11 @@ button {
   overflow: hidden;
 }
 .container {
-  width: 1158px;
-  margin-right: auto;
-  margin-left: auto;
+  min-width: 320px;
   padding: 0 15px 0 15px;
   outline: 2px solid red;
 }
-
+/* desktop width-1158px */
 /* Heder */
 .top {
   border-bottom: 1px solid var(--color-cornflower);
@@ -74,11 +77,6 @@ button {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,68 +100,128 @@ button {
 .logo-brend-heder:focus {
   outline: transparent;
 }
-.page {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+
+/* Heder mobile */
+@media screen and (min-width: 429px) {
+  .container {
+    width: 428px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo-brend-heder {
+    padding: 24px 0 22px 0;
+  }
+  .mobile-menu-open {
+    cursor: pointer;
+    border: transparent;
+    padding: 24px 0 22px 0;
+  }
+  .icon-menu-hamburger {
+    background-color: var(--color-iris);
+    color: var(--color-navy-blue);
+  }
+  .icon-menu {
+    fill: currentColor;
+  }
+  .mobile-menu-form {
+    position: static;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #8e8f99;
+  }
 }
-.nav-page {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--color-navy-blue);
-  padding: 24px 0 24px 0;
-  transition: color var(--transition-duration-and-func);
+@media screen and (max-width: 760px) {
+  .page {
+    display: none;
+  }
+  .contact {
+    display: none;
+  }
 }
-.nav-page:hover,
-.nav-page:focus {
-  color: var(--color-ocean);
-  outline: transparent;
+
+/* Heder table */
+@media screen and (min-width: 769px) {
+  .container {
+    width: 768px;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  .nav-page {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-navy-blue);
+    padding: 24px 0 24px 0;
+    transition: color var(--transition-duration-and-func);
+  }
+  .nav-page:hover,
+  .nav-page:focus {
+    color: var(--color-ocean);
+    outline: transparent;
+  }
+  .current {
+    color: var(--color-ocean);
+  }
+  .nav-page.current::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: var(--color-iris);
+  }
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    gap: 40px;
+  }
+  .contact-nav {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-slate);
+    transition: color var(--transition-duration-and-func);
+  }
+  .contact-nav:hover,
+  .contact-nav:focus {
+    color: var(--color-ocean);
+    outline: transparent;
+  }
 }
-.current {
-  color: var(--color-ocean);
-}
-.nav-page.current::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  height: 4px;
-  width: 100%;
-  border-radius: 2px;
-  background-color: var(--color-iris);
-}
-.contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
-  gap: 40px;
-}
-.contact-nav {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--color-slate);
-  transition: color var(--transition-duration-and-func);
-}
-.contact-nav:hover,
-.contact-nav:focus {
-  color: var(--color-ocean);
-  outline: transparent;
+/* Heder desktop */
+@media screen and (min-width: 1159px) {
+  .container {
+    width: 1158px;
+  }
 }
 
 /* S1 Hero section */
-.hero {
+/* .hero {
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
@@ -216,10 +274,10 @@ button {
 .hero-btn:focus {
   background: var(--color-ocean);
   outline: var(--color-ocean);
-}
+} */
 
 /* S2 Professional Sectoin */
-.prof {
+/* .prof {
   padding-top: 120px;
   padding-bottom: 120px;
 }
@@ -256,10 +314,10 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-slate);
-}
+} */
 
 /* S3 Product Sectiont */
-.prod {
+/* .prod {
   padding-bottom: 120px;
 }
 .prod-title {
@@ -276,10 +334,10 @@ button {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-}
+} */
 
 /* S4 Team Section */
-.team {
+/* .team {
   background: var(--color-cloud);
   padding-top: 120px;
   padding-bottom: 120px;
@@ -357,10 +415,10 @@ button {
 }
 .team-icon {
   fill: currentColor;
-}
+} */
 
 /* Customer */
-.customer {
+/* .customer {
   padding-top: 120px;
   padding-bottom: 120px;
 }
@@ -406,10 +464,10 @@ button {
 }
 .bg-icon {
   fill: currentColor;
-}
+} */
 
 /* Footer */
-.footer {
+/* .footer {
   background: var(--color-navy-blue);
   padding-top: 100px;
   padding-bottom: 100px;
@@ -487,10 +545,10 @@ button {
 }
 .foot-icon {
   fill: currentColor;
-}
+} */
 
 /* Footer subscribe form  */
-.subscribe-form {
+/* .subscribe-form {
   width: 453px;
 }
 .wrapper-sub {
@@ -555,10 +613,10 @@ button {
 }
 .btn-sub-icon {
   fill: currentColor;
-}
+} */
 
 /* Modal window */
-.backdrop {
+/* .backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -614,10 +672,10 @@ button {
 }
 .close-icon {
   fill: currentColor;
-}
+} */
 
 /* Modal form */
-.modal-title {
+/* .modal-title {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -755,7 +813,7 @@ button {
 .btn-send:hover,
 .btn-send:focus {
   transform: scale(1.05);
-}
+} */
 
 /* Page Portfolio  */
 /* Heder  */
@@ -764,7 +822,7 @@ body {
 }
 
 /* Filter Section */
-.section-portfolio {
+/* .section-portfolio {
   padding: 96px 0 120px 0;
 }
 .filter {
@@ -800,10 +858,10 @@ body {
   box-shadow: 0px 3px 1px 0 rgba(0, 0, 0, 0.1),
     0px 2px 1px 0 rgba(0, 0, 0, 0.08), 0px 2px 2px 0 rgba(0, 0, 0, 0.12);
   outline: var(--color-ocean);
-}
+} */
 
 /* Portfolio Section*/
-.portfolio {
+/* .portfolio {
   display: flex;
   flex-wrap: wrap;
   row-gap: 48px;
@@ -868,4 +926,4 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-slate);
-}
+} */
