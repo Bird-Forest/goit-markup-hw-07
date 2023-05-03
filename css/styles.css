@@ -103,6 +103,9 @@ button {
 
 /* Heder mobile */
 @media screen {
+  .contact-mobile {
+    display: none;
+  }
   .container {
     position: relative;
     width: 428px;
