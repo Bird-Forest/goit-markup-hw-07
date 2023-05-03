@@ -21,11 +21,11 @@ body {
   background-color: var(--color-white);
   color: var(--color-slate);
 }
-@media (min-width: 500px) {
+/* @media (min-width: 500px) {
   body {
     background-color: orange;
   }
-}
+} */
 
 h1,
 h2,
@@ -70,6 +70,7 @@ button {
   outline: 2px solid red;
 }
 /* desktop width-1158px */
+
 /* Heder */
 .top {
   border-bottom: 1px solid var(--color-cornflower);
@@ -91,7 +92,6 @@ button {
   letter-spacing: 0.03em;
   display: inline-block;
   padding: 24px 0 24px 0;
-  margin-right: 76px;
   color: var(--color-iris);
 }
 .hed {
@@ -102,8 +102,9 @@ button {
 }
 
 /* Heder mobile */
-@media screen and (min-width: 429px) {
+@media screen {
   .container {
+    position: relative;
     width: 428px;
     margin-left: auto;
     margin-right: auto;
@@ -111,57 +112,129 @@ button {
   .logo-brend-heder {
     padding: 24px 0 22px 0;
   }
-  .mobile-menu-open {
+  .menu-btn-open {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-white);
+    stroke: var(--color-navy-blue);
+    padding: 0;
+    margin: 0;
+    transition: color var(--transition-duration-and-func);
+    border: none;
     cursor: pointer;
-    border: transparent;
-    padding: 24px 0 22px 0;
   }
-  .icon-menu-hamburger {
-    background-color: var(--color-iris);
-    color: var(--color-navy-blue);
+  .icon-menu-open {
+    stroke: currentColor;
   }
-  .icon-menu {
-    fill: currentColor;
+  .menu-btn-open:hover,
+  .menu-btn-open:focus {
+    stroke: var(--color-iris);
   }
-  .mobile-menu-form {
-    position: static;
-    z-index: 200;
-    width: 100%;
-    height: 100%;
+  .menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
     display: flex;
     flex-direction: column;
-    background-color: #8e8f99;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 428px;
+    height: 796px;
+    background-color: var(--color-white);
+    transform: translateX(100%);
+    transition: transform var(--transition-duration-and-func);
+    padding-top: 80px;
+    padding-left: 40px;
+    margin-left: 0;
+    margin-right: 0;
   }
-}
-@media screen and (max-width: 760px) {
+  .menu-container.is-open {
+    transform: translateX(0) var(--transition-duration-and-func);
+  }
+  .menu-container .menu-btn-close {
+    position: absolute;
+    top: 24px;
+    right: 16px;
+  }
+  .menu-btn-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--color-cornflower);
+    color: var(--color-navy-blue);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: background-color var(--transition-duration-and-func),
+      color var(--transition-duration-and-func);
+    margin: 0;
+    border: none;
+    cursor: pointer;
+  }
+  .menu-btn-close:hover,
+  .menu-btn-close:focus {
+    background-color: var(--color-ocean);
+    color: var(--color-white);
+  }
+  .contact-mobile {
+    display: none;
+  }
   .page {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
   }
-  .contact {
-    display: none;
+  .nav-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--color-navy-blue);
+    transition: color var(--transition-duration-and-func);
+  }
+  .nav-page:hover,
+  .nav-page:focus {
+    color: var(--color-ocean);
+    outline: transparent;
   }
 }
 
 /* Heder table */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .container {
     width: 768px;
+  }
+  .logo-brend-heder {
+    margin-right: 120px;
   }
   .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
   .page {
-    display: flex;
+    /* display: flex; */
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    /* align-items: center;
+    gap: 40px; */
+    margin-right: 121px;
   }
   .nav-page {
-    display: flex;
     position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -193,17 +266,18 @@ button {
   }
   .contact {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 0;
-    gap: 40px;
+    padding: 16px 0;
+    gap: 12px;
   }
   .contact-nav {
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     color: var(--color-slate);
     transition: color var(--transition-duration-and-func);
   }
@@ -217,6 +291,21 @@ button {
 @media screen and (min-width: 1159px) {
   .container {
     width: 1158px;
+  }
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    gap: 40px;
+  }
+  .contact-nav {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  .logo-brend-heder {
+    margin-right: 76px;
   }
 }
 
@@ -616,7 +705,7 @@ button {
 } */
 
 /* Modal window */
-/* .backdrop {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -672,10 +761,10 @@ button {
 }
 .close-icon {
   fill: currentColor;
-} */
+}
 
 /* Modal form */
-/* .modal-title {
+/* /* .modal-title {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;

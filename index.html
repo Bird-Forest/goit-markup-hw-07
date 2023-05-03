@@ -20,10 +20,10 @@
   <body>
     <header class="top">
       <div class="container header">
+        <a href="./index.html" class="logo-brend-heder link"
+          >Web<span class="hed">Studio</span></a
+        >
         <nav class="nav">
-          <a href="./index.html" class="logo-brend-heder link"
-            >Web<span class="hed">Studio</span></a
-          >
           <ul class="page list">
             <li class="nav-item">
               <a class="nav-page current link" href="./index.html">Studio</a>
@@ -36,69 +36,64 @@
             </li>
           </ul>
         </nav>
-        <button class="mobile-menu-open" type="button">
-          <svg class="icon-menu-hamburger" width="24" height="24">
+        <address class="nav contact-mobile">
+          <ul class="contact list nav">
+            <li class="contact-item">
+              <a class="contact-nav link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li class="contact-item">
+              <a class="contact-nav link" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+          </ul>
+        </address>
+        <button
+          class="menu-btn-open js-open-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="icon-menu-open" width="24" height="24">
             <use
-              class="icon-menu"
+              class="icon-open-btn"
               href="./images/icon.svg#icon-menu-hamburger"
             ></use>
           </svg>
         </button>
-        <address class="nav contact">
-          <ul class="contact list nav">
-            <li class="contact-item">
-              <a class="contact-nav link" href="mailto:info@devstudio.com"
-                >info@devstudio.com</a
-              >
+        <div class="menu-container js-menu-container is-open" id="mobile-menu">
+          <button class="menu-btn-close js-close-btn" type="button">
+            <svg class="icon-menu-close" width="8" height="8">
+              <use href="./images/icon.svg#icon-close"></use>
+            </svg>
+          </button>
+          <ul class="page list">
+            <li class="nav-item">
+              <a class="nav-page current link" href="./index.html">Studio</a>
             </li>
-            <li class="contact-item">
-              <a class="contact-nav link" href="tel:+110001111111"
-                >+11 (000) 111-11-11</a
-              >
+            <li class="nav-item">
+              <a class="nav-page link" href="./portfolio.html">Portfolio</a>
             </li>
-          </ul>
-        </address>
-      </div>
-      <div class="mobile-menu-form">
-        <ul class="page list">
-          <li class="nav-item">
-            <a class="nav-page current link" href="./index.html">Studio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-page link" href="./portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-page link" href="">Contacts</a>
-          </li>
-        </ul>
-        <address class="nav contact">
-          <ul class="contact list nav">
-            <li class="contact-item">
-              <a class="contact-nav link" href="mailto:info@devstudio.com"
-                >info@devstudio.com</a
-              >
-            </li>
-            <li class="contact-item">
-              <a class="contact-nav link" href="tel:+110001111111"
-                >+11 (000) 111-11-11</a
-              >
+            <li class="nav-item">
+              <a class="nav-page link" href="">Contacts</a>
             </li>
           </ul>
-        </address>
+        </div>
       </div>
     </header>
     <main class="main-page">
       <!-- S1 Hero section -->
-      <!-- <section class="hero"> -->
-      <div class="container hero-cont">
-        <h1 class="hero-title">Effective Solutions for Your Business</h1>
-        <button data-modal-open class="hero-btn" type="button">
-          Order Service
-        </button>
-      </div>
-      <!-- </section> -->
-      <!-- S2 Professional Section  -->
-      <!-- <section class="prof"> -->
+      <section class="hero">
+        <div class="container hero-cont">
+          <h1 class="hero-title">Effective Solutions for Your Business</h1>
+          <button data-modal-open class="hero-btn" type="button">
+            Order Service
+          </button>
+        </div>
+      </section>
+      <!-- S2 Professional 
       <div class="container">
         <h2 class="visually-hidden">Why choose us</h2>
         <ul class="prof-cont list">
@@ -161,7 +156,6 @@
           </li>
         </ul>
       </div>
-      <!-- </section> -->
       <!-- S3 Product Sectiont -->
       <!-- <section class="prod">
         <div class="container">
@@ -558,6 +552,7 @@
         </form>
       </div>
     </div>
+    <script defer src="./js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
