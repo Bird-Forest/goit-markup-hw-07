@@ -133,7 +133,7 @@ button {
   .menu-container {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -155,7 +155,7 @@ button {
   .menu-container .menu-btn-close {
     position: absolute;
     top: 24px;
-    right: 16px;
+    right: 24px;
   }
   .menu-btn-close {
     display: flex;
@@ -179,9 +179,6 @@ button {
   .menu-btn-close:focus {
     background-color: var(--color-ocean);
     color: var(--color-white);
-  }
-  .contact-mobile {
-    display: none;
   }
   .page {
     display: flex;
@@ -556,7 +553,7 @@ button {
 } */
 
 /* Footer */
-/* .footer {
+/* /* .footer {
   background: var(--color-navy-blue);
   padding-top: 100px;
   padding-bottom: 100px;
@@ -762,7 +759,6 @@ button {
 .close-icon {
   fill: currentColor;
 }
-
 /* Modal form */
 /* /* .modal-title {
   font-weight: 500;
