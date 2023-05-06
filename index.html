@@ -211,25 +211,43 @@
             <li class="prod-item">
               <img
                 class="prod-pic"
+                srcset="
+                  ./images/rectangle711.jpg    360w,
+                  ./images/rectangle711@2x.jpg 360w
+                "
+                sizes="(min-width: 1158px) 360px"
                 src="./images/rectangle711.jpg"
                 alt="the screen of the computer shows the operation of the program"
                 width="360"
+                height="300px"
               />
             </li>
             <li class="prod-item">
               <img
                 class="prod-pic"
+                srcset="
+                  ./images/rectangle721.jpg    360w,
+                  ./images/rectangle721@2x.jpg 360w
+                "
+                sizes="(min-width: 1158px) 360px"
                 src="./images/rectangle721.jpg"
                 alt="use the app on your phone"
                 width="360"
+                height="300px"
               />
             </li>
             <li class="prod-item">
               <img
                 class="prod-pic"
+                srcset="
+                  ./images/rectangle731.jpg    360w,
+                  ./images/rectangle731@2x.jpg 360w
+                "
+                sizes="(min-width: 1158px) 360px"
                 src="./images/rectangle731.jpg"
                 alt="the most inspiring places"
                 width="360"
+                height="300px"
               />
             </li>
           </ul>
@@ -243,9 +261,16 @@
             <li class="team-card">
               <img
                 class="team-pic"
+                srcset="
+                  ./images/imj-photo11.jpg     264w,
+                  ./images/imj-photo11-@2x.jpg 264w
+                "
+                sizes="(min-width: 320px) 264px, 100vw"
                 src="./images/imj-photo11.jpg"
                 alt="Mark Guerrero Product Designer"
                 width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="item-card">
                 <h3 class="team-caption">Mark Guerrero</h3>
@@ -285,9 +310,16 @@
             <li class="team-card">
               <img
                 class="team-pic"
+                srcset="
+                  ./images/imj-photo21.jpg     264w,
+                  ./images/imj-photo21-@2x.jpg 264w
+                "
+                sizes="(min-width: 320px) 264px, 100vw"
                 src="./images/imj-photo21.jpg"
                 alt="Tom Ford Frontend Developer"
                 width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="item-card">
                 <h3 class="team-caption">Tom Ford</h3>
@@ -327,9 +359,16 @@
             <li class="team-card">
               <img
                 class="team-pic"
+                srcset="
+                  ./images/imj-photo31.jpg     264w,
+                  ./images/imj-photo31-@2x.jpg 264w
+                "
+                sizes="(min-width: 320px) 264px, 100vw"
                 src="./images/imj-photo31.jpg"
                 alt="Camila Garcia Marketing"
                 width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="item-card">
                 <h3 class="team-caption">Camila Garcia</h3>
@@ -369,9 +408,17 @@
             <li class="team-card">
               <img
                 class="team-pic"
+                srcset="
+                  ./images/imj-photo41.jpg     264w,
+                  ./images/imj-photo41-@2x.jpg 264w
+                "
+                sizes="(min-width: 320px) 264px, 100vw"
                 src="./images/imj-photo41.jpg"
                 alt="Daniel Wilson UI Designer"
                 width="264"
+                width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="item-card">
                 <h3 class="team-caption">Daniel Wilson</h3>
@@ -457,48 +504,50 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="box container">
-        <div class="box-left">
-          <a href="./index.html" class="logo-brend-footer link"
-            >Web<span class="fot">Studio</span></a
-          >
-          <p class="foot-text">
-            Increase the flow of customers and sales for your business with
-            digital marketing & growth solutions.
-          </p>
-        </div>
-        <div class="box-center">
-          <p class="caption-social">Social media</p>
-          <ul class="foot-social list">
-            <li class="foot-bg">
-              <a class="social-bg" href="">
-                <svg width="24" height="24" class="foot-icon">
-                  <use href="./images/icon.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="foot-bg">
-              <a class="social-bg" href="">
-                <svg width="24" height="24" class="foot-icon">
-                  <use href="./images/icon.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="foot-bg">
-              <a class="social-bg" href="">
-                <svg width="24" height="24" class="foot-icon">
-                  <use href="./images/icon.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="foot-bg">
-              <a class="social-bg" href="">
-                <svg width="24" height="24" class="foot-icon">
-                  <use href="./images/icon.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+      <div class="container boot">
+        <div class="box-foot">
+          <div class="box-left">
+            <a href="./index.html" class="logo-brend-footer link"
+              >Web<span class="fot">Studio</span></a
+            >
+            <p class="foot-text">
+              Increase the flow of customers and sales for your business with
+              digital marketing & growth solutions.
+            </p>
+          </div>
+          <div class="box-center">
+            <p class="caption-social">Social media</p>
+            <ul class="foot-social list">
+              <li class="foot-bg">
+                <a class="social-bg" href="">
+                  <svg width="24" height="24" class="foot-icon">
+                    <use href="./images/icon.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="foot-bg">
+                <a class="social-bg" href="">
+                  <svg width="24" height="24" class="foot-icon">
+                    <use href="./images/icon.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="foot-bg">
+                <a class="social-bg" href="">
+                  <svg width="24" height="24" class="foot-icon">
+                    <use href="./images/icon.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="foot-bg">
+                <a class="social-bg" href="">
+                  <svg width="24" height="24" class="foot-icon">
+                    <use href="./images/icon.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="box-right">
           <p class="caption-social">Subscribe</p>

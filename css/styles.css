@@ -39,6 +39,7 @@ p {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 .list {
   list-style: none;
@@ -63,13 +64,6 @@ button {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-.container {
-  min-width: 320px;
-  padding: 0 15px 0 15px;
-  outline: 1px solid red;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Heder */
@@ -101,14 +95,17 @@ button {
 .logo-brend-heder:focus {
   outline: transparent;
 }
-
 /* Heder mobile */
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 320px) {
   .container {
     position: relative;
+    min-width: 320px;
     width: 428px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+    outline: 1px solid red;
   }
   .logo-brend-heder {
     padding: 24px 0 22px 0;
@@ -147,7 +144,7 @@ button {
     align-items: flex-start;
     width: 428px;
     height: 796px;
-    background-color: var(--color-white);
+    background-color: var(--color-cornflower);
     transform: translateY(-100%);
     transition: transform var(--transition-duration-and-func);
     padding-top: 80px;
@@ -262,6 +259,11 @@ button {
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 1px solid red;
   }
   .menu-btn-open {
     display: none;
@@ -342,6 +344,11 @@ button {
 @media screen and (min-width: 1158px) {
   .container {
     width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 1px solid red;
   }
   .logo-brend-heder {
     margin-right: 76px;
@@ -362,7 +369,7 @@ button {
 }
 
 /* S1 Hero section */
-@media screen {
+@media screen and (min-width: 320px) {
   .hero {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
@@ -373,35 +380,37 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--color-navy-blue);
-    max-width: 428px;
+    min-width: 320px;
+    width: 428px;
     padding-top: 112px;
     padding-bottom: 112px;
     margin-left: auto;
     margin-right: auto;
   }
-}
-@media screen and (min-device-pixel-ratio: 2) and (max-width: 428px),
-  screen and (min-resolution: 192dpi) and (max-width: 428px),
-  screen and (min-resolution: 2dppx) and (max-width: 428px) {
-  .hero {
-    background-image: url(../images/peopel-office-mob@2x.jpg);
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 320px),
+    screen and (min-resolution: 192dpi) and (min-width: 320px),
+    screen and (min-resolution: 2dppx) and (min-width: 320px) {
+    .hero {
+      background-image: url(../images/peopel-office-mob@2x.jpg);
+    }
   }
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .hero {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/peopel-office-tab.jpg);
-    max-width: 768px;
+    min-width: 768px;
+    width: 768px;
   }
-}
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-  screen and (min-resolution: 192dpi) and (min-width: 768px),
-  screen and (min-resolution: 2dppx) and (min-width: 768px) {
-  .hero {
-    background-image: url(../images/people-office-tab@2x.jpg);
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .hero {
+      background-image: url(../images/people-office-tab@2x.jpg);
+    }
   }
 }
 @media screen and (min-width: 1158px) {
@@ -411,16 +420,17 @@ button {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/people-office.jpg);
+    min-width: 1158px;
     max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
   }
-}
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1158px),
-  screen and (min-resolution: 192dpi) and (min-width: 1158px),
-  screen and (min-resolution: 2dppx) and (min-width: 1158px) {
-  .hero {
-    background-image: url(../images/people-office@2x.jpg);
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1158px),
+    screen and (min-resolution: 192dpi) and (min-width: 1158px),
+    screen and (min-resolution: 2dppx) and (min-width: 1158px) {
+    .hero {
+      background-image: url(../images/people-office@2x.jpg);
+    }
   }
 }
 .hero-cont {
@@ -429,7 +439,7 @@ button {
   justify-content: center;
   align-items: center;
 }
-@media screen {
+@media screen and (min-width: 320px) {
   .hero-title {
     max-width: 320px;
     font-weight: 700;
@@ -486,7 +496,7 @@ button {
 }
 
 /* S2 Professional Sectoin */
-@media screen {
+@media screen and (min-width: 320px) {
   .prof {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -497,10 +507,13 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: 72px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .prof-item {
     display: flex;
     flex-direction: column;
+    max-width: 398px;
     gap: 8px;
   }
   .prof-caption {
@@ -531,9 +544,10 @@ button {
     flex-wrap: wrap;
     row-gap: 72px;
     column-gap: 24px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .prof-item {
-    align-items: flex-start;
     max-width: 356px;
   }
   .prof-cont > .prof-item {
@@ -553,7 +567,6 @@ button {
   }
   .prof-item {
     align-items: flex-start;
-    max-width: 264px;
   }
   .prof-cont > .prof-item {
     flex-basis: calc((100%-72px) / 4);
@@ -562,7 +575,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 264px;
+    width: 264px;
     height: 112px;
     background: var(--color-cloud);
     border-radius: 4px;
@@ -581,7 +594,7 @@ button {
 }
 
 /* S3 Product Sectiont */
-@media screen and (max-width: 1157px) {
+@media screen and (max-width: 1158px) {
   .prod {
     display: none;
   }
@@ -620,11 +633,15 @@ button {
 }
 
 /* S4 Team Section */
-@media screen {
+@media screen and (min-width: 320px) {
   .team {
-    background: var(--color-cloud);
+    background-color: var(--color-cloud);
+    min-width: 320px;
+    width: 428px;
     padding-top: 96px;
     padding-bottom: 96px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .team-title {
     font-weight: 700;
@@ -704,12 +721,15 @@ button {
   }
 }
 @media screen and (min-width: 768px) {
+  .team {
+    min-width: 428px;
+    width: 768px;
+  }
   .team-cont {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 552px;
     row-gap: 64px;
     column-gap: 24px;
     margin-left: auto;
@@ -721,6 +741,8 @@ button {
 }
 @media screen and (min-width: 1158px) {
   .team {
+    min-width: 768px;
+    width: 1158px;
     padding-top: 120px;
     padding-bottom: 120px;
   }
@@ -730,13 +752,14 @@ button {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 1128px;
     gap: 24px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /* Customer */
-@media screen {
+@media screen and (min-width: 320px) {
   .customer {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -757,7 +780,6 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 396px;
     row-gap: 72px;
     column-gap: 16px;
     margin-left: auto;
@@ -795,7 +817,6 @@ button {
 }
 @media screen and (min-width: 768px) {
   .client {
-    max-width: 552px;
     row-gap: 72px;
     column-gap: 24px;
   }
@@ -813,21 +834,25 @@ button {
   }
   .client {
     flex-wrap: nowrap;
-    max-width: 1128px;
+    width: 1128px;
     gap: 24px;
   }
 }
 
 /* Footer */
-@media screen {
+@media screen and (min-width: 320px) {
   .footer {
-    background: var(--color-navy-blue);
+    background-color: var(--color-navy-blue);
     padding-top: 96px;
     padding-bottom: 96px;
   }
-  .box {
+  .box-foot {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   .box-left {
     display: flex;
@@ -911,8 +936,9 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 428px;
     gap: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .wrapper-sub {
     display: flex;
@@ -922,8 +948,7 @@ button {
     gap: 16px;
   }
   .user-sub {
-    display: block;
-    width: 398px;
+    width: 396px;
     height: 40px;
     font-weight: 400;
     font-size: 12px;
@@ -976,13 +1001,42 @@ button {
     fill: currentColor;
   }
 }
-@media screen and (min-width: 768) {
-  .box {
-    flex-wrap: wrap;
+@media screen and (min-width: 768px) {
+  .box-foot {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
+    align-items: baseline;
   }
   .box-left {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 24px;
+    margin-bottom: 72px;
+  }
+  .box-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .box-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .wrapper-sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+  }
+  .user-sub {
+    width: 264px;
   }
 }
 @media screen and (min-width: 1158px) {
@@ -990,18 +1044,20 @@ button {
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
+  .boot {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+  .box-foot {
+    width: 1158px;
+  }
   .box-left {
-    margin-bottom: 72px;
+    margin-right: 120px;
   }
   .box-center {
-    margin-bottom: 72px;
-  }
-  .box-right {
-    width: 453px;
-  }
-  .user-sub {
-    width: 264px;
-    padding: 8px 16px;
+    margin-right: 80px;
   }
 }
 
@@ -1021,7 +1077,7 @@ button {
   transition: opacity var(--transition-duration-and-func),
     visibility var(--transition-duration-and-func);
 }
-@media screen {
+@media screen and (min-width: 320px) {
   .modal {
     position: absolute;
     top: 50%;
@@ -1043,7 +1099,6 @@ button {
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) rotate(360deg) scale(0.2);
 }
-
 .close-btn {
   position: absolute;
   top: 24px;
@@ -1213,6 +1268,7 @@ button {
 }
 
 /* Page Portfolio  */
+
 /* Heder  */
 body {
   counter-reset: var(--color-slate);
