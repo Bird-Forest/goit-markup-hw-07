@@ -65,41 +65,15 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-/* Heder */
-.top {
-  border-bottom: 1px solid var(--color-cornflower);
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo-brend-heder {
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 1.17;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  display: inline-block;
-  padding: 24px 0 24px 0;
-  color: var(--color-iris);
-}
-.hed {
-  color: var(--color-navy-blue);
-}
-.logo-brend-heder:focus {
-  outline: transparent;
-}
-/* Heder mobile */
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 320px) {
   .container {
     position: relative;
     min-width: 320px;
+  }
+}
+
+@media screen and (min-width: 428px) {
+  .container {
     width: 428px;
     padding-left: 15px;
     padding-right: 15px;
@@ -107,8 +81,50 @@ button {
     margin-right: auto;
     outline: 1px solid red;
   }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    width: 1158px;
+  }
+}
+
+/* Heder */
+.top {
+  border-bottom: 1px solid var(--color-cornflower);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+/* Heder mobile */
+@media screen and (min-width: 320px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .logo-brend-heder {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    display: inline-block;
     padding: 24px 0 22px 0;
+    margin-left: 15px;
+    color: var(--color-iris);
+  }
+  .hed {
+    color: var(--color-navy-blue);
+  }
+  .logo-brend-heder:focus {
+    outline: transparent;
   }
   .nav {
     display: none;
@@ -116,25 +132,24 @@ button {
 
   /* Mobile modal menu */
   .menu-btn-open {
-    width: 24px;
-    height: 24px;
     background-color: var(--color-white);
     stroke: var(--color-navy-blue);
-    padding: 0;
-    margin: 0;
     transition: color var(--transition-duration-and-func);
     border: none;
     cursor: pointer;
+    padding: 24px 0 22px 0;
+    margin-left: auto;
   }
   .icon-menu-open {
     stroke: currentColor;
+    margin-right: 15px;
   }
   .menu-btn-open:hover,
   .menu-btn-open:focus {
     stroke: var(--color-iris);
   }
   .menu-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 100;
@@ -142,26 +157,21 @@ button {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 428px;
-    height: 796px;
-    background-color: var(--color-cornflower);
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
     transform: translateY(-100%);
     transition: transform var(--transition-duration-and-func);
     padding-top: 80px;
-    padding-left: 40px;
-    padding-bottom: 40px;
+    margin-top: 0px;
     margin-left: 0;
     margin-right: 0;
   }
   .menu-container.is-open {
     transform: translateY(0) var(--transition-duration-and-func);
   }
-  .menu-container .menu-btn-close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-  }
   .menu-btn-close {
+    z-index: 101;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,7 +185,6 @@ button {
       0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: background-color var(--transition-duration-and-func),
       color var(--transition-duration-and-func);
-    margin: 0;
     border: none;
     cursor: pointer;
   }
@@ -184,21 +193,23 @@ button {
     background-color: var(--color-ocean);
     color: var(--color-white);
   }
-  .page {
+  .menu-container > .menu-btn-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    margin-left: auto;
+  }
+  .page-mob {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 40px;
+    margin-left: 40px;
+    margin-right: auto;
     margin-bottom: auto;
   }
-  .nav-page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+  .nav-page-mob {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.1;
@@ -206,8 +217,8 @@ button {
     color: var(--color-navy-blue);
     transition: color var(--transition-duration-and-func);
   }
-  .nav-page:hover,
-  .nav-page:focus {
+  .nav-page-mob:hover,
+  .nav-page-mob:focus {
     color: var(--color-ocean);
     outline: transparent;
   }
@@ -217,11 +228,13 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 40px;
+    margin-left: 40px;
+    margin-right: auto;
     margin-bottom: 48px;
   }
   .contact-tel {
     font-weight: 700;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 1.1;
     letter-spacing: 0.04em;
     color: var(--color-slate);
@@ -249,26 +262,48 @@ button {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 56px;
+    gap: 24px;
+    margin-left: 40px;
+    margin-right: auto;
+    margin-bottom: 40px;
   }
-  .contact-mobile {
+}
+@media screen and (min-width: 428px) {
+  .logo-brend-heder {
+    margin-left: 0;
+    padding: 24px 0 24px 0;
+  }
+  .nav {
     display: none;
+  }
+  .icon-menu-open {
+    margin-right: 0;
+  }
+  .contact-mail {
+    font-size: 36px;
+  }
+  .modal-social {
+    gap: 56px;
   }
 }
 /* Heder table */
 @media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    outline: 1px solid red;
+  .nav {
+    display: block;
   }
   .menu-btn-open {
     display: none;
   }
   .menu-container {
+    display: none;
+  }
+  .page-mob {
+    display: none;
+  }
+  .contact-modal {
+    display: none;
+  }
+  .modal-social {
     display: none;
   }
   .logo-brend-heder {
@@ -283,7 +318,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 121px;
+    gap: 40px;
   }
   .nav-page {
     position: relative;
@@ -324,6 +359,7 @@ button {
     align-items: center;
     padding: 16px 0;
     gap: 12px;
+    margin-left: auto;
   }
   .contact-nav {
     font-style: normal;
@@ -342,14 +378,6 @@ button {
 }
 /* Heder desktop */
 @media screen and (min-width: 1158px) {
-  .container {
-    width: 1158px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    outline: 1px solid red;
-  }
   .logo-brend-heder {
     margin-right: 76px;
   }
@@ -380,10 +408,9 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--color-navy-blue);
-    min-width: 320px;
-    width: 428px;
-    padding-top: 112px;
-    padding-bottom: 112px;
+    max-width: 428px;
+    padding-top: 107px;
+    padding-bottom: 107px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -391,8 +418,17 @@ button {
     screen and (min-resolution: 192dpi) and (min-width: 320px),
     screen and (min-resolution: 2dppx) and (min-width: 320px) {
     .hero {
-      background-image: url(../images/peopel-office-mob@2x.jpg);
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/peopel-office-mob@2x.jpg);
     }
+  }
+}
+@media screen and (min-widht: 428px) {
+  .hero {
+    min-width: 428px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -403,13 +439,17 @@ button {
       ),
       url(../images/peopel-office-tab.jpg);
     min-width: 768px;
-    width: 768px;
+    padding: 112px 0 112px 0;
   }
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
     screen and (min-resolution: 192dpi) and (min-width: 768px),
     screen and (min-resolution: 2dppx) and (min-width: 768px) {
     .hero {
-      background-image: url(../images/people-office-tab@2x.jpg);
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/people-office-tab@2x.jpg);
     }
   }
 }
@@ -421,7 +461,6 @@ button {
       ),
       url(../images/people-office.jpg);
     min-width: 1158px;
-    max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
   }
@@ -429,7 +468,11 @@ button {
     screen and (min-resolution: 192dpi) and (min-width: 1158px),
     screen and (min-resolution: 2dppx) and (min-width: 1158px) {
     .hero {
-      background-image: url(../images/people-office@2x.jpg);
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/people-office@2x.jpg);
     }
   }
 }
@@ -441,13 +484,20 @@ button {
 }
 @media screen and (min-width: 320px) {
   .hero-title {
-    max-width: 320px;
+    max-width: 290px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--color-white);
+    margin-bottom: auto;
+  }
+}
+@media screen and (min-width: 428px) {
+  .hero-title {
+    max-width: 320px;
+    margin-bottom: 72px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -459,6 +509,7 @@ button {
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--color-white);
+    margin-bottom: 36px;
   }
 }
 .hero-btn {
@@ -476,7 +527,6 @@ button {
   max-height: 56px;
   padding: 16px 32px;
   border-radius: 4px;
-  margin-top: 72px;
   transition: background-color var(--transition-duration-and-func);
 }
 .hero-btn:hover,
@@ -484,37 +534,31 @@ button {
   background: var(--color-ocean);
   outline: var(--color-ocean);
 }
-@media screen and (min-width: 768px) {
-  .hero-btn {
-    margin-top: 36px;
-  }
-}
-@media screen and (min-width: 1158px) {
-  .hero-btn {
-    margin-top: 36px;
-  }
-}
 
 /* S2 Professional Sectoin */
 @media screen and (min-width: 320px) {
   .prof {
     padding-top: 96px;
+    padding-right: 0;
     padding-bottom: 96px;
+    padding-left: 0;
+    margin: 0;
   }
   .prof-cont {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 72px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .prof-item {
     display: flex;
     flex-direction: column;
-    max-width: 398px;
-    gap: 8px;
+  }
+  .prof-cont > .prof-item {
+    flex-basis: calc((100% - 72px) / 1);
   }
   .prof-caption {
     font-weight: 700;
@@ -523,6 +567,7 @@ button {
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--color-navy-blue);
+    margin-bottom: 8px;
   }
   .prof-text {
     font-weight: 500;
@@ -531,8 +576,6 @@ button {
     letter-spacing: 0.02em;
     color: var(--color-slate);
   }
-}
-@media screen and (max-width: 1158px) {
   .prof-pic {
     display: none;
   }
@@ -542,10 +585,12 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
     row-gap: 72px;
     column-gap: 24px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
   .prof-item {
     max-width: 356px;
@@ -553,20 +598,17 @@ button {
   .prof-cont > .prof-item {
     flex-basis: calc((100%-24px) / 2);
   }
+  .prof-caption {
+    text-align: left;
+  }
 }
 @media screen and (min-width: 1158px) {
   .prof {
     padding-top: 120px;
     padding-bottom: 120px;
   }
-  .prof-cont {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 24px;
-  }
   .prof-item {
-    align-items: flex-start;
+    max-width: 264px;
   }
   .prof-cont > .prof-item {
     flex-basis: calc((100%-72px) / 4);
@@ -636,12 +678,10 @@ button {
 @media screen and (min-width: 320px) {
   .team {
     background-color: var(--color-cloud);
-    min-width: 320px;
-    width: 428px;
     padding-top: 96px;
     padding-bottom: 96px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
   .team-title {
     font-weight: 700;
@@ -656,7 +696,7 @@ button {
   .team-cont {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 72px;
   }
@@ -687,8 +727,8 @@ button {
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
-    margin-bottom: 8px;
     color: var(--color-slate);
+    margin-bottom: 8px;
   }
   .team-social {
     display: flex;
@@ -721,10 +761,6 @@ button {
   }
 }
 @media screen and (min-width: 768px) {
-  .team {
-    min-width: 428px;
-    width: 768px;
-  }
   .team-cont {
     display: flex;
     flex-direction: row;
@@ -741,8 +777,6 @@ button {
 }
 @media screen and (min-width: 1158px) {
   .team {
-    min-width: 768px;
-    width: 1158px;
     padding-top: 120px;
     padding-bottom: 120px;
   }
@@ -753,8 +787,6 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -782,16 +814,14 @@ button {
     align-items: center;
     row-gap: 72px;
     column-gap: 16px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .client-item {
-    display: block;
-    height: 88px;
     max-width: 190px;
   }
   .client > .client-item {
-    flex-basis: calc((100%-16px) / 2);
+    flex-basis: calc((100% - 16px) / 2);
   }
   .client-cont {
     display: flex;
@@ -819,12 +849,14 @@ button {
   .client {
     row-gap: 72px;
     column-gap: 24px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .client-item {
     max-width: 168px;
   }
   .client > .client-item {
-    flex-basis: calc((100%-2 * 24px) / 3);
+    flex-basis: calc((100% - 2 * 24px) / 3);
   }
 }
 @media screen and (min-width: 1158px) {
@@ -834,7 +866,6 @@ button {
   }
   .client {
     flex-wrap: nowrap;
-    width: 1128px;
     gap: 24px;
   }
 }
@@ -851,14 +882,15 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .box-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 268px;
     margin-bottom: 72px;
   }
   .logo-brend-footer {
@@ -880,7 +912,6 @@ button {
     outline: transparent;
   }
   .foot-text {
-    width: 264px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
@@ -948,7 +979,8 @@ button {
     gap: 16px;
   }
   .user-sub {
-    width: 396px;
+    display: block;
+    width: 290px;
     height: 40px;
     font-weight: 400;
     font-size: 12px;
@@ -1001,12 +1033,27 @@ button {
     fill: currentColor;
   }
 }
+@media screen and (min-widht: 428px) {
+  .user-sub {
+    width: 396px;
+  }
+}
 @media screen and (min-width: 768px) {
+  .boot {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .box-foot {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: baseline;
+    margin-left: 0;
+    margin-right: 0;
   }
   .box-left {
     display: flex;
@@ -1021,12 +1068,15 @@ button {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: 0;
   }
   .box-right {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0;
   }
   .wrapper-sub {
     display: flex;
@@ -1044,17 +1094,17 @@ button {
     padding-top: 100px;
     padding-bottom: 100px;
   }
-
   .boot {
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: baseline;
-  }
-  .box-foot {
-    width: 1158px;
+    margin-left: 0;
+    margin-right: 0;
   }
   .box-left {
     margin-right: 120px;
+    margin-bottom: 0;
   }
   .box-center {
     margin-right: 80px;
@@ -1077,11 +1127,23 @@ button {
   transition: opacity var(--transition-duration-and-func),
     visibility var(--transition-duration-and-func);
 }
-@media screen and (min-width: 320px) {
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 576px;
+  border-radius: 4px;
+  background-color: rgba(252, 252, 252, 1);
+  transform: translate(-50%, -50%);
+  transition: transform 1000ms cubic-bezier(0.65, 1.43, 0, -1.33);
+  padding: 72px 16px 24px 16px;
+}
+@media screen and (min-width: 428px) {
   .modal {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; */
     width: 408px;
     height: 576px;
     border-radius: 4px;
@@ -1206,11 +1268,17 @@ button {
   justify-content: flex-start;
   align-items: center;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 8px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--color-light-slate);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+}
+@media screen and (min-width: 428px) {
+  .user-agree-text {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
 }
 .user-agree-text::before {
   display: block;
@@ -1234,10 +1302,15 @@ button {
 }
 .policy {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 8px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--color-iris);
+}
+@media screen and (min-width: 428px) {
+  .policy {
+    font-size: 12px;
+  }
 }
 .btn-send {
   display: block;
