@@ -79,7 +79,7 @@ button {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    outline: 1px solid transparent;
+    outline: 1px solid red;
   }
 }
 @media screen and (min-width: 768px) {
@@ -104,7 +104,7 @@ button {
 @media screen and (min-width: 320px) {
   .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
   .logo-brend-heder {
@@ -127,6 +127,9 @@ button {
     outline: transparent;
   }
   .nav {
+    display: none;
+  }
+  .address {
     display: none;
   }
 
@@ -234,9 +237,9 @@ button {
   }
   .contact-tel {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1.1;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     color: var(--color-slate);
     transition: color var(--transition-duration-and-func);
   }
@@ -249,7 +252,7 @@ button {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     color: var(--color-slate);
     transition: color var(--transition-duration-and-func);
   }
@@ -276,11 +279,17 @@ button {
   .nav {
     display: none;
   }
+  .address {
+    display: none;
+  }
   .icon-menu-open {
     margin-right: 0;
   }
-  .contact-mail {
+  .contact-tel {
     font-size: 36px;
+  }
+  .contact-mail {
+    font-size: 20px;
   }
   .modal-social {
     gap: 56px;
@@ -289,6 +298,10 @@ button {
 /* Heder table */
 @media screen and (min-width: 768px) {
   .nav {
+    display: block;
+    margin-right: auto;
+  }
+  .address {
     display: block;
   }
   .menu-btn-open {
@@ -309,15 +322,10 @@ button {
   .logo-brend-heder {
     margin-right: 120px;
   }
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   .page {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     gap: 40px;
   }
   .nav-page {
@@ -355,11 +363,10 @@ button {
   .contact {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 16px 0;
     gap: 12px;
-    margin-left: auto;
   }
   .contact-nav {
     font-style: normal;
@@ -380,9 +387,6 @@ button {
 @media screen and (min-width: 1158px) {
   .logo-brend-heder {
     margin-right: 76px;
-  }
-  .page {
-    margin-right: 332px;
   }
   .contact {
     flex-direction: row;
@@ -486,18 +490,18 @@ button {
   .hero-title {
     max-width: 290px;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 1.11;
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--color-white);
-    margin-bottom: auto;
+    margin-bottom: 72px;
   }
 }
 @media screen and (min-width: 428px) {
   .hero-title {
+    font-size: 36px;
     max-width: 320px;
-    margin-bottom: 72px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -510,6 +514,11 @@ button {
     letter-spacing: 0.02em;
     color: var(--color-white);
     margin-bottom: 36px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .hero-title {
+    margin-bottom: 48px;
   }
 }
 .hero-btn {
@@ -845,6 +854,11 @@ button {
     fill: currentColor;
   }
 }
+@media screen and (min-width: 428px) {
+  .client-item {
+    height: 88px;
+  }
+}
 @media screen and (min-width: 768px) {
   .client {
     row-gap: 72px;
@@ -990,6 +1004,7 @@ button {
     border-radius: 4px;
     border: 1px solid var(--color-white);
     background-color: var(--color-navy-blue);
+    padding-left: 16px;
     outline-style: none;
   }
   .user-sub::placeholder {
@@ -1141,9 +1156,9 @@ button {
 }
 @media screen and (min-width: 428px) {
   .modal {
-    /* position: absolute;
+    position: absolute;
     top: 50%;
-    left: 50%; */
+    left: 50%;
     width: 408px;
     height: 576px;
     border-radius: 4px;
