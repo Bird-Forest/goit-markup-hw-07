@@ -79,7 +79,7 @@ button {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    outline: 1px solid red;
+    outline: 1px solid transparent;
   }
 }
 @media screen and (min-width: 768px) {
@@ -165,6 +165,7 @@ button {
     background-color: var(--color-white);
     transform: translateY(-100%);
     transition: transform var(--transition-duration-and-func);
+    opacity: 0;
     padding-top: 80px;
     margin-top: 0px;
     margin-left: 0;
@@ -172,6 +173,7 @@ button {
   }
   .menu-container.is-open {
     transform: translateY(0) var(--transition-duration-and-func);
+    opacity: 1;
   }
   .menu-btn-close {
     z-index: 101;
